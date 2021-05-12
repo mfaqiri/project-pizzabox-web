@@ -16,9 +16,7 @@ namespace PizzaBox.Testing.Tests
             //arrange
             var sut = new Order();
 
-            //act
 
-            //assert
             Assert.False(sut.Pizzas.Equals(null));
         }
 
