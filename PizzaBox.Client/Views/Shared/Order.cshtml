@@ -1,0 +1,88 @@
+@model PizzaBox.Client.Models.OrderViewModel
+
+<form action="/order" method="post">
+  @Html.AntiForgeryToken()
+
+
+  <fieldset>
+    <legend>Customers</legend>
+
+    @Html.ValidationMessageFor(m => m.SelectedCustomer)
+
+    <select name="Customer" id="SelectedCustomer">
+      @foreach (var item in Model.Customers)
+    {
+      <option value="@item.Name">@item.Name</option>
+    }
+    </select>
+  </fieldset>
+
+  <fieldset>
+    <legend>Store</legend>
+
+    @Html.ValidationMessageFor(m => m.SelectedStore)
+
+    <select name="Store" id="SelectedStore">
+      @foreach (var item in Model.Stores)
+    {
+      <option value="@item.Name">@item.Name</option>
+    }
+    </select>
+  </fieldset>
+
+
+  <fieldset>
+    <legend>Crusts</legend>
+
+    @Html.ValidationMessageFor(m => m.SelectedCrust)
+    
+    <select name="Crust" id="SelectedCrust">
+    @foreach (var item in Model.Crusts)
+    {
+      <option value="@item.Name">@item.Name</option>
+    }
+    </select>
+  </fieldset>
+
+  <fieldset>
+    <legend>Sauces</legend>
+
+    @Html.ValidationMessageFor(m => m.SelectedSauce)
+
+     <select name="Sauce" id="SelectedSauce">
+    @foreach (var item in Model.Crusts)
+    {
+      <option value="@item.Name">@item.Name</option>
+    }
+    </select>
+
+  </fieldset>
+
+  <fieldset>
+    <legend>PizzaType</legend>
+    @Html.ValidationMessageFor(m => m.SelectedPizzaType)
+
+    @foreach (var item in Model.PizzaTypes)
+    {
+      <input class="form-check-input" type="radio" asp-for="SelectedPizzaType" value="@item">
+      <label class="form-check-label" for="@item">@item.Name</label>
+    }
+
+  </fieldset>
+
+  <fieldset>
+    <legend>Toppings</legend>
+
+    @Html.ValidationMessageFor(m => m.SelectedToppings)
+    @foreach (var item in Model.Toppings)
+    {
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" id="@item" name="selectedtoppings" value="@item">
+        <label class="form-check-label" for="@item">@item.Name</label>
+      </div>
+    }
+  </fieldset>
+
+  <button type="submit">make pizza</button>
+
+</form>>

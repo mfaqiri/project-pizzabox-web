@@ -1,11 +1,23 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <ItemGroup>
     <ProjectReference Include="..\PizzaBox.Domain\PizzaBox.Domain.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <PackageReference Include="microsoft.entityframeworkcore" Version="5.0.5" />
+    <PackageReference Include="microsoft.entityframeworkcore.design" Version="5.0.5">
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+    <PackageReference Include="microsoft.entityframeworkcore.sqlserver" Version="5.0.5" />
+    <PackageReference Include="microsoft.extensions.configuration.usersecrets" Version="5.0.0" />
+    <PackageReference Include="npgsql.entityframeworkcore.postgresql" Version="5.0.5.1" />
+  </ItemGroup>
+
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
+    <UserSecretsId>7efacdd3-53e6-4fa7-8486-90e13bc8a0f2</UserSecretsId>
   </PropertyGroup>
 
 </Project>
