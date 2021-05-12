@@ -51,7 +51,7 @@ jobs:
           creds: ${{ secrets.AZURE_CREDENTIALS }}
       - uses: azure/webapps-deploy@v2
         with:
-          app-name: pizzabox-web
+          app-name: mfpizzabox-web
           images: mfaqiri/pizzabox-web
 
 name: ci-pipeline
