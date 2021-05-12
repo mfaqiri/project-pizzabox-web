@@ -17,7 +17,6 @@ jobs:
       - test
     env:
       SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     runs-on: ubuntu-20.04
     steps:
       - uses: actions/checkout@v2
@@ -36,9 +35,9 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - run: docker image build -f Dockerfile -t pizzabox .
-      - run: docker image tag pizzabox mansoorfaqiri/pizzabox
+      - run: docker image tag pizzabox mfaqiri/pizzabox
       - run: echo $DOCKER_TOKEN | docker login -u $DOCKER_USER --password-stdin
-      - run: docker push mansoorfaqiri/pizzabox
+      - run: docker push mfaqiri/pizzabox
       - run: docker logout
 
   deploy:
@@ -51,8 +50,8 @@ jobs:
           creds: ${{ secrets.AZURE_CREDENTIALS }}
       - uses: azure/webapps-deploy@v2
         with:
-          app-name: pizzaboxdemo
-          images: mansoorfaqiri/pizzabox
+          app-name: mfpizzabox-web
+          images: mfaqiri/pizzabox
 
 name: ci-pipeline
 
