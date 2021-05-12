@@ -75,9 +75,7 @@ namespace PizzaBox.Testing.Tests
             //arrange
             var sut = new Sausage();
 
-            //act
 
-            //assert
             Assert.True(sut.Name.Equals("Sausage"));
         }
 
