@@ -36,9 +36,9 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - run: docker image build -f Dockerfile -t pizzabox .
-      - run: docker image tag pizzabox mfaqiri/pizzabox
+      - run: docker image tag pizzabox mfaqiri/pizzabox-web
       - run: echo $DOCKER_TOKEN | docker login -u $DOCKER_USER --password-stdin
-      - run: docker push mfaqiri/pizzabox
+      - run: docker push mfaqiri/pizzabox-web
       - run: docker logout
 
   deploy:
@@ -51,8 +51,8 @@ jobs:
           creds: ${{ secrets.AZURE_CREDENTIALS }}
       - uses: azure/webapps-deploy@v2
         with:
-          app-name: mfpizzabox-web
-          images: mfaqiri/pizzabox
+          app-name: pizzabox-web
+          images: mfaqiri/pizzabox-web
 
 name: ci-pipeline
 
