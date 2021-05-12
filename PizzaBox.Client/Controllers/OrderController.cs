@@ -52,14 +52,16 @@ namespace PizzaBox.Client.Controllers
 
            ViewBag.Order = newOrder;
 
+           order.Populate(_unitOfWork);
+
           return View("checkout");
-        }else
+        }/*else
         {
-          return View("InvalidOrder");
-        }
+          return View("checkout");
+        }*/
       }
 
-      order.Populate(_unitOfWork);
+     
 
       return View("checkout");
     }
