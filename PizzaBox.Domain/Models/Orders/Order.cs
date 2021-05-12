@@ -49,12 +49,6 @@ namespace PizzaBox.Domain.Models.Orders
         public bool AddPizza(Pizza pizza)
         {
             
-           /* if(Price + pizza.Price > 250)
-            {
-                Console.WriteLine("Can't have an order over $250");
-                return false;
-            }*/
-
             Pizzas.Add(pizza);
             Price += pizza.Price;
 
