@@ -4,4 +4,28 @@ Summary: The web application is designed for use by a pizza store employee to re
 
 # Technology
 
-C#, ASP.NET Web API, SQL Server, ADO.NET Entity Framework, HTML, JavaScript, CSS, Microsoft Azure, ASP.NET MVC
+* C#
+* ASP.NET WebAPI
+* SQL Server
+* ADO.NET Entity Framework
+* HTML
+* JavaScript
+* CSS
+* Microsoft Azure
+* ASP.NET MVC
+
+# Features
+
+Current features
+* Add a new user.
+* Create a premade pizza.
+
+To-do list:
+* Remove user.
+* Create custom pizzas.
+* Allow access to view from a store's perspective.
+
+# Getting Started
+
+docker pull mfaqiri/pizzabox-web
+docker container --rm mfaqiri/pizzabox-web
