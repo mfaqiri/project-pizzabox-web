@@ -27,5 +27,5 @@ To-do list:
 
 # Getting Started
 
-docker pull mfaqiri/pizzabox-web
-docker container --rm mfaqiri/pizzabox-web
+* docker pull mfaqiri/pizzabox-web
+* docker container --rm mfaqiri/pizzabox-web
